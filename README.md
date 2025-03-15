@@ -1,34 +1,43 @@
-Analysis Steps
+# 🚨 911 Calls Data Analysis
 
-Import Libraries: Import numpy, pandas, matplotlib, and seaborn.
+## 📌 Overview
+This project analyzes **911 emergency call data** to uncover insights into **call trends, response patterns, and public safety needs**. Using **data visualization and feature engineering**, we explore key **emergency trends** across different **locations, times, and call reasons**.
 
-Load Data: Read the CSV file into a pandas DataFrame.
+### 🔹 **Key Insights & Contributions**
+✅ **Top Zip Codes & Townships** for 911 calls.  
+✅ **Most Common Emergency Reasons** – Fire, Traffic, EMS.  
+✅ **Peak Hours & Days for Emergency Calls**.  
+✅ **911 Call Trends Over Time** – Monthly, Daily, Hourly Analysis.  
+✅ **Heatmaps & Clustermaps** for response pattern visualization.  
 
-Data Overview: Check the DataFrame info and preview the first few rows.
+---
 
-Basic Questions:
-Top 5 zip codes for 911 calls.
-Top 5 townships for 911 calls.
-Number of unique title codes.
+## 🏗 **Analysis Workflow**
 
-Create New Features:
-Extract the reason for the call from the title.
-Convert timeStamp to DateTime objects and extract Hour, Month, and Day of Week.
+### **1️⃣ Data Preparation**
+- 📥 **Load Data**: Import **CSV file** into a **Pandas DataFrame**.
+- 🏗 **Data Overview**: Check dataset structure, missing values, and data types.
 
-Data Visualization:
-Countplot of 911 calls by Reason.
-Countplot of Day of Week with hue based on Reason.
-Countplot of Month with hue based on Reason.
+### **2️⃣ Feature Engineering**
+- Extract **Reason for Call** from the `title` column.
+- Convert **timeStamp** to **DateTime format**.
+- Extract **Hour, Month, and Day of Week** for trend analysis.
 
-Further Analysis:
-Group data by Month and plot the count of calls per month.
-Create a linear fit on the number of calls per month.
-Plot the counts of 911 calls by date.
-Separate plots for each Reason.
+### **3️⃣ Exploratory Data Analysis (EDA)**
+- 📌 **Top 5 Zip Codes & Townships** for 911 calls.
+- 📌 **Count of Unique Title Codes**.
+- 📌 **Call Frequency by Reason (Fire, EMS, Traffic).**
 
-Heatmaps and Clustermaps:
-Restructure the DataFrame for heatmaps and clustermaps.
-Create heatmaps and clustermaps for Day of Week vs Hour and Day of Week vs Month.
+### **4️⃣ Data Visualization**
+- 📊 **911 Calls by Reason** – `Seaborn Countplots`.
+- 🗓 **Day of Week vs. Call Reason** – `Countplot`.
+- 📆 **Month vs. Call Reason** – `Countplot & Linear Fit`.
+- 🔥 **Heatmaps & Clustermaps** for **Call Volume vs. Time**.
 
-This work underscores the importance of data-driven decision-making in enhancing public safety and emergency response.
+---
 
+## 📊 **Key Findings & Visualizations**
+
+### **1️⃣ Most Common Reasons for 911 Calls**
+```python
+sns.countplot(x="Reason", data=df, palette="coolwarm")
